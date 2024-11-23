@@ -40,11 +40,7 @@ namespace CARS_app.Model
 
 		public override string ToString()
 		{
-			return $"Agency ID: {AgencyId}\n" +
-				$"Agency name: {AgencyName}\n" +
-				$"Jurisdiction: {Jurisdiction}\n" +
-				$"Contact number: {PhoneNumber}\n" +
-				$"Address: {Address}\n";
+			return $"Agency ID: {AgencyId}\nAgency name: {AgencyName}\nJurisdiction: {Jurisdiction}\nContact number: {PhoneNumber}\nAddress: {Address}\n";
 		}
 
 	}

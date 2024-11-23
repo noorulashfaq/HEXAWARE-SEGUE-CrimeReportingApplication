@@ -64,12 +64,10 @@ namespace CARS_app.Model
 
 		public override string ToString()
 		{
-			return $"Victim ID: {VictimId}\n" +
-				$"Victim name: {FirstName} {LastName} ({Gender})\n" +
-				$"Date of Birth: {DateOfBirth:dd-MMM-yyyy}\n" +
-				$"Contact: {PhoneNumber}\n" +
-				$"Address: {Address}\n";
+			return $"Victim ID: {VictimId}\nVictim name: {FirstName} {LastName} ({Gender})\nDate of Birth: {DateOfBirth:dd-MMM-yyyy}\nContact: {PhoneNumber}\nAddress: {Address}\n";
 		}
+			
+
 
 	}
 }

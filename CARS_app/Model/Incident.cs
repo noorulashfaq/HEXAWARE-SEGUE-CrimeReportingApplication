@@ -51,12 +51,8 @@ namespace CARS_app.Model
 
 		public override string ToString()
 		{
-			return $"Incident ID: {IncidentId} (Status: {Status})\n" +
-				$"Description: {IncidentType} - {Description}\n" +
-				$"Location & date: {Location}, {IncidentDate:dd-MMM-yyyy}\n";
-				//$"Description: {Description}\n" +
-				//$"Status: {Status}\n" +
-				//$"Agency ID: {AgencyId}\n";
+			return $"Incident ID: {IncidentId} (Status: {Status})\nDescription: {IncidentType} - {Description}\nLocation & date: {Location}, {IncidentDate:dd-MMM-yyyy}\n";
 		}
+
 	}
 }

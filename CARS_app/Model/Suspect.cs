@@ -63,11 +63,8 @@ namespace CARS_app.Model
 
 		public override string ToString()
 		{
-			return $"Suspect ID: {SuspectId}\n" +
-				$"Victim name: {FirstName} {LastName} ({Gender})\n" +
-				$"Date of Birth: {DateOfBirth:dd-MMM-yyyy}\n" +
-				$"Contact: {PhoneNumber}\n" +
-				$"Address: {Address}\n";
+			return $"Suspect ID: {SuspectId}\nVictim name: {FirstName} {LastName} ({Gender})\nDate of Birth: {DateOfBirth:dd-MMM-yyyy}\nContact: {PhoneNumber}\nAddress: {Address}\n";
 		}
+
 	}
 }

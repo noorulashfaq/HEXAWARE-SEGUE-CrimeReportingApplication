@@ -37,10 +37,8 @@ namespace CARS_app.Model
 
 		public override string ToString()
 		{
-			return $"Evidence ID: {EvidenceId}\n" +
-				$"Incident ID: {IncidentId}\n" +
-				$"Description: {Description}\n" +
-				$"Location found: {LocationFound}\n";
+			return $"Evidence ID: {EvidenceId}\nIncident ID: {IncidentId}\nDescription: {Description}\nLocation found: {LocationFound}\n";
 		}
+
 	}
 }

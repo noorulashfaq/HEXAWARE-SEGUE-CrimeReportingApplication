@@ -62,13 +62,9 @@ namespace CARS_app.Model
 
 		public override string ToString()
 		{
-			return $"Officer ID: {OfficerId}\n" +
-				$"Officer name: {FirstName} {LastName}\n" +
-				$"Badge number & Rank: {BadgeNumber} - {Rank}\n" +
-				$"Contact number: {PhoneNumber}\n" +
-				$"Address: {Address}\n" +
-				$"Agency ID: {AgencyId}";
+			return $"Officer ID: {OfficerId}\nOfficer name: {FirstName} {LastName}\nBadge number & Rank: {BadgeNumber} - {Rank}\nContact number: {PhoneNumber}\nAddress: {Address}\nAgency ID: {AgencyId}";
 		}
+
 
 	}
 }

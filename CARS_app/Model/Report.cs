@@ -50,12 +50,9 @@ namespace CARS_app.Model
 
 		public override string ToString()
 		{
-			return $"Report ID: {ReportId}\n" +
-				$"Incident ID: {IncidentId}\n" +
-				$"Reporting officer: {ReportingOfficer}\n" +
-				$"Date: {ReportDate} ({Status})\n" +
-				$"Details: {ReportDetails}\n";
+			return $"Report ID: {ReportId}\nIncident ID: {IncidentId}\nReporting officer: {ReportingOfficer}\nDate: {ReportDate} ({Status})\nDetails: {ReportDetails}\n";
 		}
+
 
 	}
 }
