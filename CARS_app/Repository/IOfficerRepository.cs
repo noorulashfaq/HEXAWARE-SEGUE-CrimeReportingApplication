@@ -12,5 +12,7 @@ namespace CARS_app.Repository
 		List<Officer> GetAllOfficers();
 		int AddOfficer(Officer officer);
 		Officer GetOfficerById(int officerId);
+		int OfficerLogin(string email, string password, string role);
+
 	}
 }

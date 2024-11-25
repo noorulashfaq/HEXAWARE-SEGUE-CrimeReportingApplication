@@ -315,6 +315,7 @@ namespace CARS_app.Service
 						reportBuilder.AppendLine($"  Date of Birth : {victim.DateOfBirth:yyyy-MM-dd}");
 						reportBuilder.AppendLine($"  Gender        : {victim.Gender}");
 						reportBuilder.AppendLine($"  Contact Info  : {victim.PhoneNumber}");
+						reportBuilder.AppendLine($"  Address       : {victim.Address}");
 						reportBuilder.AppendLine();
 					}
 
@@ -328,6 +329,7 @@ namespace CARS_app.Service
 						reportBuilder.AppendLine($"  Date of Birth : {suspect.DateOfBirth:yyyy-MM-dd}");
 						reportBuilder.AppendLine($"  Gender        : {suspect.Gender}");
 						reportBuilder.AppendLine($"  Contact Info  : {suspect.PhoneNumber}");
+						reportBuilder.AppendLine($"  Address       : {suspect.Address}");
 						reportBuilder.AppendLine();
 					}
 

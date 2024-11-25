@@ -1,11 +1,6 @@
 ﻿using CARS_app.Model;
 using CARS_app.Utility;
-using System;
-using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CARS_app.Repository
 {
@@ -43,6 +38,8 @@ namespace CARS_app.Repository
 						officer.PhoneNumber = (long)reader["PhoneNumber"];
 						officer.Address = (string)reader["Address"];
 						officer.AgencyId = (int)reader["AgencyID"];
+						officer.Email = (string)reader["Email"];
+						officer.Role = (string)reader["Role"];
 
 						officers.Add(officer);
 					}
@@ -59,10 +56,11 @@ namespace CARS_app.Repository
 		{
 			try
 			{
+				string hashedPassword = PasswordChecker.HashPassword(officer.Password);
 				using (SqlConnection sqlConnection = new SqlConnection(connectionString))
 				{
 					_cmd.Parameters.Clear();
-					_cmd.CommandText = "insert into Officers (FirstName, LastName, BadgeNumber, Rank, PhoneNumber, Address, AgencyID) values (@firstName, @lastName, @badgeNumber, @rank, @phoneNumber, @address, @agencyId)";
+					_cmd.CommandText = "insert into Officers (FirstName, LastName, BadgeNumber, Rank, PhoneNumber, Address, AgencyID, Email, Password, Role) values (@firstName, @lastName, @badgeNumber, @rank, @phoneNumber, @address, @agencyId, @email, @password, @role)";
 					_cmd.Parameters.AddWithValue("@firstName", officer.FirstName);
 					_cmd.Parameters.AddWithValue("@lastName", officer.LastName);
 					_cmd.Parameters.AddWithValue("@badgeNumber", officer.BadgeNumber);
@@ -70,6 +68,9 @@ namespace CARS_app.Repository
 					_cmd.Parameters.AddWithValue("@phoneNumber", officer.PhoneNumber);
 					_cmd.Parameters.AddWithValue("@address", officer.Address);
 					_cmd.Parameters.AddWithValue("@agencyId", officer.AgencyId);
+					_cmd.Parameters.AddWithValue("@email", officer.Email);
+					_cmd.Parameters.AddWithValue("@password", hashedPassword);
+					_cmd.Parameters.AddWithValue("@role", officer.Role);
 					_cmd.Connection = sqlConnection;
 					sqlConnection.Open();
 					return _cmd.ExecuteNonQuery();
@@ -106,6 +107,8 @@ namespace CARS_app.Repository
 							officer.PhoneNumber = (long)reader["PhoneNumber"];
 							officer.Address = (string)reader["Address"];
 							officer.AgencyId = (int)reader["AgencyID"];
+							officer.Email = (string)reader["Email"];
+							officer.Role = (string)reader["Role"];
 						}
 					}
 				}
@@ -116,5 +119,33 @@ namespace CARS_app.Repository
 			}
 			return officer;
 		}
+
+		public int OfficerLogin(string email, string password, string role)
+		{
+			Officer officer = new Officer();
+			string hashedPassword = PasswordChecker.HashPassword(password);
+			
+			using (SqlConnection conn = new SqlConnection(connectionString))
+			{
+				try
+				{
+					_cmd.Parameters.Clear();
+					_cmd.CommandText = "select OfficerID from Officers where Email = @email and Password = @password and Role = @role";
+					_cmd.Parameters.AddWithValue("@email", email);
+					_cmd.Parameters.AddWithValue("@password", hashedPassword);
+					_cmd.Parameters.AddWithValue("@role", role);
+					_cmd.Connection = conn;
+					conn.Open();
+					object result = _cmd.ExecuteScalar();
+					return result != null ? Convert.ToInt32(result) : -1;
+				}
+				catch (Exception ex)
+				{
+					Console.WriteLine(ex.Message);
+				}
+			}
+			return -1;
+		}
+
 	}
 }

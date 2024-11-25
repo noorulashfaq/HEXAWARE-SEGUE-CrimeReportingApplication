@@ -11,5 +11,6 @@ namespace CARS_app.Service
 		void GetAllOfficers();
 		void GetAllOfficersForMenu();
 		void AddNewOfficer();
+		int OfficerLogin(string role);
 	}
 }

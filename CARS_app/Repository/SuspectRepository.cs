@@ -64,7 +64,7 @@ namespace CARS_app.Repository
 						{
 							Suspect suspect = new Suspect();
 
-							suspect.SuspectId = (int)reader["VictimID"];
+							suspect.SuspectId = (int)reader["SuspectID"];
 							suspect.FirstName = (string)reader["FirstName"];
 							suspect.LastName = (string)reader["LastName"];
 							suspect.DateOfBirth = (DateTime)reader["DateOfBirth"];

@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CARS_app.Model
+﻿namespace CARS_app.Model
 {
 	internal class Officer
 	{
 		int _officerId, _badgeNumber, _agencyId;
-		string _firstName, _lastName, _rank, _address;
+		string _firstName, _lastName, _rank, _address, _email, _password, _role;
 		long _phoneNumber;
 
 		public int OfficerId
@@ -60,9 +54,26 @@ namespace CARS_app.Model
 			set { _phoneNumber = value; }
 		}
 
+		public string Email
+		{
+			get { return _email; }
+			set { _email = value; }
+		}
+
+		public string Password
+		{
+			get { return _password; }
+			set { _password = value; }
+		}
+
+		public string Role
+		{
+			get { return _role; }
+			set { _role = value; }
+		}
 		public override string ToString()
 		{
-			return $"Officer ID: {OfficerId}\nOfficer name: {FirstName} {LastName}\nBadge number & Rank: {BadgeNumber} - {Rank}\nContact number: {PhoneNumber}\nAddress: {Address}\nAgency ID: {AgencyId}";
+			return $"Officer ID: {OfficerId}\nOfficer name: {FirstName} {LastName}\nBadge number & Rank: {BadgeNumber} - {Rank}\nContact number: {PhoneNumber}\nEmail: {Email}\nAddress: {Address}\nAgency ID: {AgencyId}\n";
 		}
 
 

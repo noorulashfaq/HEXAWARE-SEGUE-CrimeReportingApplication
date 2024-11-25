@@ -1,5 +1,4 @@
 ﻿using CARS_app.Service;
-using System.Drawing;
 
 namespace CARS_app.Main
 {
@@ -29,7 +28,6 @@ namespace CARS_app.Main
 						IOfficerService officerService = new OfficerService();
 						do
 						{
-							Thread.Sleep(500);
 							Console.Write("\nWelcome Admin!\nMain menu:\n" +
 								"\t1. Get all agencies\n" +
 								"\t2. Add new agency\n" +
@@ -85,7 +83,6 @@ namespace CARS_app.Main
 						{
 							try
 							{
-								Thread.Sleep(500);
 								Console.Write("\nWelcome Officer!\nMain menu:\n" +
 									"\t1. Get all incidents\n" +
 									"\t2. Register new incident\n" +

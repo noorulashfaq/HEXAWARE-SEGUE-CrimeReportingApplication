@@ -6,7 +6,8 @@ namespace CARS_app
     {
         static void Main(string[] args)
         {
-            MainModule m = new MainModule();
+            //MainModule m = new MainModule();
+            CarsApplication m = new CarsApplication();
             m.Run();
         }
     }
